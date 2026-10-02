@@ -54,7 +54,7 @@ function PersonalStyling() {
     <a href="/about">About</a>
     <a href="/personal-styling">Personal Styling</a>
     <a href="/wedding-styling">Wedding Styling</a>
-    <a href="/contact">Contact</a>
+    <a href="/contact">Enquiry</a>
   </nav>
 
   <button

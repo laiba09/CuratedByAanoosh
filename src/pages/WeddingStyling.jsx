@@ -54,7 +54,7 @@ function WeddingStyling() {
           <a href="/wedding-styling" className="active">
             Wedding Styling
           </a>
-          <a href="/contact">Contact</a>
+          <a href="/contact">Enquiry</a>
         </nav>
 
         <button
