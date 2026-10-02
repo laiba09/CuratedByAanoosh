@@ -162,37 +162,6 @@ Two years ago, that experience became Curated by Aanoosh, founded in Sydney, Aus
 
       {/* CURATOR */}
 
-      <section className="about-curator">
-        <div className="about-curator-image about-reveal">
-          <img
-            src={aboutPortrait}
-            alt="Aanoosh stylist and creative director"
-          />
-        </div>
-
-        <div className="about-curator-copy about-reveal">
-          <p className="about-label">
-            The Curator
-          </p>
-
-          <h2>
-            Aanoosh
-            <span>Stylist & Creative Director</span>
-          </h2>
-
-          <p>
-    Aanoosh has continuously developed her skills in styling through hands-on experience, experimentation and a growing understanding of how clothing can completely change the way someone feels.
-Her approach has evolved through studying proportion, silhouette, colour, fabric, layering and the small details that bring an outfit together. Over time, she has learned how to balance creativity with practicality — creating looks that feel polished and elevated while still being comfortable and personal to the individual wearing them.
-</p>
-<p>
-Today, she continues to build on those skills through Curated by Aanoosh, approaching every client as an opportunity to create something considered, individual and genuinely reflective of who they are.
-          </p>
-
-
-          
-        </div>
-      </section>
-
       {/* PHILOSOPHY */}
 
       <section className="about-philosophy">

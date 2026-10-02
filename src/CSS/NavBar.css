@@ -1,0 +1,386 @@
+/* =========================================================
+   GLOBAL NAVBAR LOOK
+   Use these same measurements on EVERY page
+========================================================= */
+
+.home-navbar,
+.about-navbar,
+.ps-navbar,
+.ws-navbar,
+.contact-navbar {
+  width: 100%;
+  height: 92px;
+
+  padding: 0 5.5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   SAME LOGO EVERYWHERE
+========================================================= */
+
+.home-logo,
+.about-logo,
+.ps-logo,
+.ws-logo,
+.contact-brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   SAME NAV LINK LAYOUT
+========================================================= */
+
+.home-nav-links,
+.about-nav-links,
+.ps-nav-links,
+.ws-nav-links,
+.contact-nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+}
+
+
+/* SAME LINK TYPOGRAPHY */
+
+.home-nav-links a,
+.about-nav-links a,
+.ps-nav-links a,
+.ws-nav-links a,
+.contact-nav-links a {
+  position: relative;
+
+  font-family: "Inter", system-ui, sans-serif;
+
+  font-size: 0.72rem;
+  font-weight: 500;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+
+  text-decoration: none;
+}
+
+
+/* SAME UNDERLINE */
+
+.home-nav-links a::after,
+.about-nav-links a::after,
+.ps-nav-links a::after,
+.ws-nav-links a::after,
+.contact-nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  transition: width 0.3s ease;
+}
+
+.home-nav-links a:hover::after,
+.about-nav-links a:hover::after,
+.ps-nav-links a:hover::after,
+.ws-nav-links a:hover::after,
+.contact-nav-links a:hover::after,
+.about-nav-links a.active::after,
+.contact-nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   DARK / IMAGE NAVBARS
+   HOME
+========================================================= */
+
+.home-navbar {
+  position: relative;
+
+  color: white;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-logo,
+.home-nav-links a {
+  color: white;
+}
+
+.home-nav-links a::after {
+  background: white;
+}
+
+
+/* =========================================================
+   LIGHT NAVBARS
+   ABOUT + PERSONAL + CONTACT
+========================================================= */
+
+.about-navbar,
+.ps-navbar,
+.contact-navbar {
+  position: relative;
+
+  background: #f5f1ea;
+
+  color: #181715;
+
+  border-bottom:
+    1px solid rgba(24, 23, 21, 0.14);
+}
+
+.about-logo,
+.ps-logo,
+.contact-brand,
+.about-nav-links a,
+.ps-nav-links a,
+.contact-nav-links a {
+  color: #181715;
+}
+
+.about-nav-links a::after,
+.ps-nav-links a::after,
+.contact-nav-links a::after {
+  background: #181715;
+}
+
+
+/* =========================================================
+   WEDDING SPLIT HERO NAV
+========================================================= */
+
+.ws-navbar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  background: transparent;
+
+  border-bottom:
+    1px solid rgba(23, 22, 20, 0.14);
+}
+
+
+/* Wedding logo sits over image */
+
+.ws-logo {
+  color: white !important;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Wedding links sit over cream panel */
+
+.ws-nav-links {
+  position: relative;
+
+  z-index: 2;
+}
+
+.ws-nav-links a {
+  color: #181715 !important;
+}
+
+.ws-nav-links a::after {
+  background: #181715;
+}
+
+
+/* subtle left navbar overlay */
+
+.ws-navbar::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0 auto 0 0;
+
+  width: 54%;
+
+  background: rgba(15, 13, 12, 0.08);
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   MENU BUTTON BASE
+========================================================= */
+
+.home-menu-button,
+.about-menu-button,
+.ps-menu-button,
+.ws-menu-button,
+.contact-menu-button {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE — SAME SIZE EVERYWHERE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .home-navbar,
+  .about-navbar,
+  .ps-navbar,
+  .ws-navbar,
+  .contact-navbar {
+    height: 76px;
+
+    padding: 0 6%;
+  }
+
+
+  .home-logo,
+  .about-logo,
+  .ps-logo,
+  .ws-logo,
+  .contact-brand {
+    font-size: 1.35rem;
+  }
+
+
+  .home-menu-button,
+  .about-menu-button,
+  .ps-menu-button,
+  .ws-menu-button,
+  .contact-menu-button {
+    width: 35px;
+    height: 35px;
+
+    padding: 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 102;
+  }
+
+
+  .home-menu-button span,
+  .ws-menu-button span {
+    width: 100%;
+    height: 1px;
+
+    background: white;
+  }
+
+
+  .about-menu-button span,
+  .ps-menu-button span,
+  .contact-menu-button span {
+    width: 100%;
+    height: 1px;
+
+    background: #181715;
+  }
+
+
+  .home-nav-links,
+  .about-nav-links,
+  .ps-nav-links,
+  .ws-nav-links,
+  .contact-nav-links {
+    display: none;
+
+    position: absolute;
+
+    top: 76px;
+    left: 0;
+    right: 0;
+
+    padding: 32px 6%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 22px;
+
+    z-index: 101;
+  }
+
+
+  .home-nav-links.open {
+    display: flex;
+
+    background: rgba(19, 20, 19, 0.98);
+  }
+
+
+  .about-nav-links.open,
+  .ps-nav-links.open,
+  .ws-nav-links.open,
+  .contact-nav-links.open {
+    display: flex;
+
+    background: #f5f1ea;
+  }
+
+
+  .home-nav-links.open a {
+    color: white;
+  }
+
+
+  .about-nav-links.open a,
+  .ps-nav-links.open a,
+  .ws-nav-links.open a,
+  .contact-nav-links.open a {
+    color: #181715 !important;
+  }
+
+
+  .ws-navbar::before {
+    width: 100%;
+
+    background: rgba(18, 16, 14, 0.25);
+  }
+}
