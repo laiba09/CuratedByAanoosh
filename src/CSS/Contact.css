@@ -1377,3 +1377,25 @@
   }
 
 }
+
+.contact-form-success,
+.contact-form-error {
+  width: 100%;
+  margin-top: 18px;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+.contact-form-success {
+  color: #56614d;
+}
+
+.contact-form-error {
+  color: #8a3d35;
+}
+
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 import "../CSS/Contact.css";
 
@@ -13,6 +14,9 @@ const NAV = [
 
 function Contact() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [isSending, setIsSending] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -54,15 +58,46 @@ function Contact() {
       [name]: value,
     }));
   };
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  setIsSending(true);
+  setSubmitStatus("");
 
-    console.log("Enquiry submitted:", formData);
+  try {
+    await emailjs.send(
+      "service_awd1gwb",
+      "template_aslbtz9",
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || "Not provided",
+        service: formData.service || "Not selected",
+        contact_method: formData.contactMethod || "Not selected",
+        message: formData.message || "No message provided",
+      },
+      {
+        publicKey: "QeQ7CHqbhunTyEslO",
+      }
+    );
 
-    // Connect this to Formspree, EmailJS,
-    // your own backend, etc. later.
-  };
+    setSubmitStatus("success");
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      contactMethod: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("Failed to send enquiry:", error);
+    setSubmitStatus("error");
+  } finally {
+    setIsSending(false);
+  }
+};
 
   return (
     <main className="contact-page">
@@ -297,9 +332,32 @@ function Contact() {
 
             {/* SUBMIT */}
             <div className="contact-submit-row contact-field-full">
-              <button type="submit" className="contact-submit">
-                SEND ENQUIRY
+              <button
+                type="submit"
+                className="contact-submit"
+                disabled={isSending}
+              >
+                {isSending ? "SENDING..." : "SEND ENQUIRY"}
               </button>
+
+              {submitStatus === "success" && (
+                <div className="contact-success-message">
+                  <span>✓</span>
+                  <div>
+                    <strong>Enquiry sent successfully.</strong>
+                    <p>
+                      Thank you for getting in touch. Aanoosh will be in touch soon.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="contact-error-message">
+                  <strong>Something went wrong.</strong>
+                  <p>Please try sending your enquiry again.</p>
+                </div>
+              )}
             </div>
           </form>
         </div>
