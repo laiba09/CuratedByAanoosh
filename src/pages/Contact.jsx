@@ -249,7 +249,7 @@ const handleSubmit = async (event) => {
                   />
 
                   <span>
-                    <small>01</small>
+                    <small></small>
                     Personal Styling
                   </span>
                 </label>
@@ -264,7 +264,7 @@ const handleSubmit = async (event) => {
                   />
 
                   <span>
-                    <small>02</small>
+                    <small></small>
                     Wedding Styling
                   </span>
                 </label>
